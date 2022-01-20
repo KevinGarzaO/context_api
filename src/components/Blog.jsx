@@ -2,6 +2,7 @@ import React from 'react';
 import posts from '../data/posts';
 import { NavLink } from 'react-router-dom';
 import { ContextoTema } from '../contexts/contextoTema';
+import Controles from './controls';
 
 const Blog = () => {
     
@@ -18,6 +19,7 @@ const Blog = () => {
                             </li>
                })}
             </ul>
+            <Controles />
         </div>
     );
 }

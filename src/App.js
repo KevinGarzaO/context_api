@@ -11,7 +11,7 @@ import { ContextoTema } from './contexts/contextoTema';
 
 const App = () => {
   const {tema} = useContext(ContextoTema);
-  console.log(tema.fuente);
+  
   return (
     <BrowserRouter>
       <ContenedorPrincipal>
