@@ -1,8 +1,11 @@
 import React from 'react';
 import posts from '../data/posts';
 import { NavLink } from 'react-router-dom';
+import { ContextoTema } from '../contexts/contextoTema';
 
 const Blog = () => {
+    
+
     return (
         <div>
             <h2>Blog</h2>

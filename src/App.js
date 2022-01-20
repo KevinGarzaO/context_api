@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Acerca from './components/Acerca';
 import Blog from './components/Blog';
@@ -7,13 +7,16 @@ import Inicio from './components/Inicio';
 import styled from 'styled-components';
 import Post from './components/Post';
 import Error404 from './components/Error404';
+import { ContextoTema } from './contexts/contextoTema';
 
 const App = () => {
+  const {tema} = useContext(ContextoTema);
+  console.log(tema.fuente);
   return (
     <BrowserRouter>
       <ContenedorPrincipal>
         <Header />
-        <Main>
+        <Main tema={tema}>
           <Routes>
             <Route path="*" element={<Error404 />} />
             <Route path="/" element={<Inicio />} />
@@ -34,6 +37,8 @@ const ContenedorPrincipal = styled.div`
 `;
 
 const Main = styled.main`
+    font-size: ${props => props.tema ? props.tema.fuente + 'px' : '15px'};
+    text-align: ${props => props.tema ? props.tema.alineado : 'center'};
     background: #fff;
     padding: 40px;
     border-radius: 10px;
